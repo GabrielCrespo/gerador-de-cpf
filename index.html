@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Gerador de CPF - Online</title>
+    </head>
+    <body>
+       <div class="principal">
+            <header>
+                <div id="logo">
+                    <h1>Gerador Online</h1>
+                </div>
+            </header>
+            <nav>
+                <div id="menu">
+                    <ul>
+                        <li><a href="index.html">Gerar CPF</a></li>
+                        <li><a href="validarcpf.html">Validar CPF</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <section>
+                <div id="conteudo-principal">          
+                    <fieldset>
+                        <legend>
+                            <h2>Gerador de CPF</h2>
+                        </legend>
+                        <div id="opcoes">                  
+                            <label for="com-pontuacao">Com Pontuação</label>
+                            <input type="radio" name="cpf-opcao" id="com-pontuacao" checked>
+                            <label for="sem-pontuacao">Sem Pontuação</label>
+                            <input type="radio" name="cpf-opcao" id="sem-pontuacao">                                
+                        </div>
+                        <div id="btn-enviar">
+                            <input type="button" value="Gerar CPF"> 
+                        </div>
+                    </fieldset>
+                    <div id="resultado">
+                        resultado: ###.###.###-##
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div id="rodape">
+                    <h4>&copy; Todos os Direitos Reservados</h3>
+                </div>
+            </footer>
+       </div>
+    </body>
+</html>
