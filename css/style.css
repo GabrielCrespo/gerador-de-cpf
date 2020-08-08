@@ -2,8 +2,7 @@ html{
     height: 100%;
 }
 body {
-     color: #988163;
-    /* color: #38352d; */
+    color: #988163;
     margin: 0;
     padding: 10px 0;
     background: #f8f6f8;
@@ -15,7 +14,6 @@ body {
 h2 {
     text-align: center;
     margin: 2px;
-    /* border: 1px solid black; */
 }
 
 legend {  
@@ -30,17 +28,15 @@ li {
 }
 
 ul{
-    /* border: solid 1px black; */
     padding: 15px 0;
     margin: 10px 100px;
 }
 
 .principal {
     background-color: white;
-    /* border: 1px solid black; */
     width: 700px;
     margin: auto;
-    box-shadow: 2px 2px 2px #38352d;;
+    box-shadow: 2px 2px 2px #38352d;
 }
 
 #conteudo-principal {
@@ -52,7 +48,6 @@ ul{
 
 
 #logo {
-    /* border: 1px solid black; */
     margin: 5px auto 0 auto;
     padding: 5px 20px;
     width: 650px;
@@ -99,7 +94,6 @@ ul{
 }
 
 #menu {
-    /* border: 1px solid black; */
     text-align: center;
     margin: 3px;
 }
