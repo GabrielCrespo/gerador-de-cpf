@@ -7,7 +7,7 @@ function gerarDigitosIniciaisCPF(){
     return digitosIniciais;
 }
 
-function multiplicacaoParaPrimeiroDigitoVerificador(digitosPrimeiroDV){
+function multiplicarPrimeiroDigitoVerificador(digitosPrimeiroDV){
    
     const digitosPrimeiroDvMultiplicados = [];
     let fatorMultiplicativo = 10;
@@ -19,7 +19,7 @@ function multiplicacaoParaPrimeiroDigitoVerificador(digitosPrimeiroDV){
     return digitosPrimeiroDvMultiplicados;
 }
 
-function multiplicacaoParaSegundoDigitoVerificador(digitosSegundoDV){
+function multiplicarSegundoDigitoVerificador(digitosSegundoDV){
    
     const digitosSegundoDvMultiplicados = [];
     let fatorMultiplicativo = 11;
@@ -44,11 +44,13 @@ function estruturarCPF(){
 
     const digitos = gerarDigitosIniciaisCPF()
 
-    const somaPrimeiroDigitoVerificador = somarDigitosCPF(multiplicacaoParaPrimeiroDigitoVerificador(digitos))
+    const multiplicacaoPrimeiroDigitoVerificador = multiplicarPrimeiroDigitoVerificador(digitos)
+    const somaPrimeiroDigitoVerificador = somarDigitosCPF(multiplicacaoPrimeiroDigitoVerificador)
     const primeiroDigitoVerificador = calcularDigitoVerficador(somaPrimeiroDigitoVerificador)
     digitos.push(primeiroDigitoVerificador)
 
-    const somaSegundoDigitoVerificador = somarDigitosCPF(multiplicacaoParaSegundoDigitoVerificador(digitos))
+    const multiplicacaoSegundoDigitoVerificador = multiplicarSegundoDigitoVerificador(digitos)
+    const somaSegundoDigitoVerificador = somarDigitosCPF(multiplicacaoSegundoDigitoVerificador)
     const segundoDigitoVerificador = calcularDigitoVerficador(somaSegundoDigitoVerificador)
     digitos.push(segundoDigitoVerificador)
 
@@ -57,11 +59,24 @@ function estruturarCPF(){
 
 function apresentarCPF(){
 
-    let resultado = document.querySelector('#resultado')
+    const opcaoCPF = document.querySelector('#com-pontuacao');
+    const mascaraCPF = /(\d{3})(\d{3})(\d{3})(\d{2})/
+    const resultado = document.querySelector('#resultado');
+    const item = document.createElement('p')
+
     resultado.innerHTML = ''
-    let item = document.createElement('p')
-    item.innerHTML = `CPF gerado: ${estruturarCPF()}`
-    item.style.color = '#CE1A1A'
-    resultado.appendChild(item)
-    
+
+    if (opcaoCPF.checked) {
+
+        item.innerHTML = `CPF gerado: ${estruturarCPF().replace(mascaraCPF, '$1.$2.$3-$4')}`
+        item.style.color = '#CE1A1A'
+        resultado.appendChild(item)
+        
+    } else {
+     
+        item.innerHTML = `CPF gerado: ${estruturarCPF()}`
+        item.style.color = '#CE1A1A'
+        resultado.appendChild(item)
+
+    }  
 }
