@@ -1,2 +1,2 @@
 # gerador-de-cpf
-Gerar CPF
+Gerar CPF com ou sem pontuação.
